@@ -51,9 +51,10 @@
 
 ## DenseNet121
 
-Переобученная DenseNetModel (файл - DenseNetModel, процесс обучения на картинке в output)
-функция
+Переобученная DenseNetModel (файл - DenseNetModel, процесс обучения на картинке)<br/>
+![DenseNet](https://github.com/listnt/APTOS2019/blob/master/output/DenseNet.png)<br/>
 
+функция<br/>
 ```python
 def build_model(newmodel): #где newmodel - Densenet121 из keras application
     model = Sequential()
@@ -85,9 +86,10 @@ def build_model(newmodel): #где newmodel - Densenet121 из keras application
 
 ## ResNet121
 
-Переобученная  ResNetModel (файл - ResNetModel, процесс обучения на картинке в output) 
-функция
+Переобученная  ResNetModel (файл - ResNetModel, процесс обучения на картинке) <br/>
+![ResNet](https://github.com/listnt/APTOS2019/blob/master/output/ResNet.png)<br/>
 
+функция<br/>
 ```python
 def build_model(newmodel): #где newmodel - ResNet50 из keras application
     model = Sequential()
