@@ -55,20 +55,21 @@
 
 Переобученная DenseNetModel (файл - DenseNetModel, процесс обучения на картинке в output)
 функция
+
+```python
 def build_model(newmodel): #где newmodel - Densenet121 из keras application
     model = Sequential()
     model.add(newmodel)
     model.add(layers.GlobalAveragePooling2D())
     model.add(layers.Dropout(0.5))
     model.add(layers.Dense(5, activation='sigmoid'))
-
     model.compile(
         loss='binary_crossentropy',
         optimizer=Adam(lr=0.00005),
         metrics=['accuracy']
     )
-
     return model
+```
 точность ~ 96 % на тренировочном и валидационом.
 На kaggle точность валидации ~ 90 %(случайные 200 картинок из train.csv). Точность на тестовом  0.778074
 Модель сохранена в файл DenseNetModel
@@ -79,6 +80,8 @@ def build_model(newmodel): #где newmodel - Densenet121 из keras application
 
 Переобученная  ResNetModel (файл - ResNetModel, процесс обучения на картинке в output) 
 функция
+
+```python
 def build_model(newmodel): #где newmodel - ResNet50 из keras application
     model = Sequential()
     model.add(newmodel)
@@ -93,6 +96,8 @@ def build_model(newmodel): #где newmodel - ResNet50 из keras application
     )
 
     return model
+```
+
 точность ~ 98 % на тренировочном и валидационом.
 На kaggle точность валидации ~ 90 %(случайные 200 картинок из train.csv). Точность на тестовом  0.770888
 Модель сохранена в файл ResnetModel
