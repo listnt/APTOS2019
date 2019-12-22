@@ -9,7 +9,7 @@ import cv2
 import pandas as pd
 from tqdm import tqdm
 train=pd.read_csv("train.csv")
-train1=pd.read_csv("newnewtrain.csv")
+train1=pd.read_csv("newtrain.csv")
 train=train.append(train1)
 
 data_dir="./train_224_AAA/"
@@ -17,7 +17,7 @@ data_dir="./train_224_AAA/"
 trainPaths=data_dir+train["id_code"]+".png"
 trainLabels=train.diagnosis.values
 test=pd.read_csv("sample_submission.csv")
-testPaths=list(paths.list_images("./new_test_resize_224"))
+testPaths=list(paths.list_images("./test_resize_224"))
 testLabels=test.diagnosis.values
 split = train_test_split(trainPaths, trainLabels,
 test_size=1000, stratify=trainLabels,
@@ -46,6 +46,6 @@ for (dType, paths, labels, outputPath) in datasets:
 
 print("[INFO] serializing means...")
 D = {"R": np.mean(R), "G": np.mean(G), "B": np.mean(B)}
-f = open("new_output/mean.json", "w")
+f = open("output/mean.json", "w")
 f.write(json.dumps(D))
 f.close()
