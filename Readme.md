@@ -53,6 +53,8 @@
 
 # Описание моделей
 
+## DenseNet121
+
 Переобученная DenseNetModel (файл - DenseNetModel, процесс обучения на картинке в output)
 функция
 
@@ -71,12 +73,21 @@ def build_model(newmodel): #где newmodel - Densenet121 из keras application
     return model
 ```
 точность ~ 96 % на тренировочном и валидационом.
+
 На kaggle точность валидации ~ 90 %(случайные 200 картинок из train.csv). Точность на тестовом  0.778074
+
 Модель сохранена в файл DenseNetModel
 
+
+## svm DenseNet121
+
 точность валидации SVM построенная над этой моделью - 0.901.
+
+Модель сохранена в pickle файл DenseNet121.pkl
+
 на kaggle пока считает
 
+## ResNet121
 
 Переобученная  ResNetModel (файл - ResNetModel, процесс обучения на картинке в output) 
 функция
@@ -99,20 +110,33 @@ def build_model(newmodel): #где newmodel - ResNet50 из keras application
 ```
 
 точность ~ 98 % на тренировочном и валидационом.
+
 На kaggle точность валидации ~ 90 %(случайные 200 картинок из train.csv). Точность на тестовом  0.770888
+
 Модель сохранена в файл ResnetModel
 
+## svm ResNet50
 
 точность валидации  SVM построенная над этой моделью - 0.91.
+
+Модель сохранена в pickle файл ResNet50.pkl
+
 на kaggle пока считает
 
 # Transfer learning. Модели которые не переобучались, а были взяты с весами "imagenet" из keras application
 
-ImageNet DenseNet 
+## ImageNet DenseNet 
+
 SVM validation score: 0.427
+
+Модель сохранена в pickle файл DenseNet50ImageNet.pkl
+
 на kaggle даже заливать не буду, очень маленькая точность
 
 
-ImageNet ResNet 
+## ImageNet ResNet 
 SVM validation score: 0.545
+
+Модель сохранена в pickle файл ResNet50ImageNet.pkl
+
 на kaggle даже заливать не буду. очень маленькая точность
